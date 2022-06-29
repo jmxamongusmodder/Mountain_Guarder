@@ -22,8 +22,8 @@ async function updateControllers() {
             axes.movex = controller.axes[0];
             axes.movey = controller.axes[1];
             if (controllerSettings.quadraticSensitivity) {
-                axes.aimx = Math.max(-window.innerWidth/2, Math.min(axes.aimx + ((Math.round((controller.axes[2]+(controllerSettings.driftX/100))*10)/10*controllerSettings.sensitivity*0.1)**2)/2*parseInt(Math.abs(controller.axes[2])/controller.axes[2]), window.innerWidth/2));
-                axes.aimy = Math.max(-window.innerHeight/2, Math.min(axes.aimy + ((Math.round((controller.axes[3]+(controllerSettings.driftY/100))*10)/10*controllerSettings.sensitivity*0.1)**2)/2*parseInt(Math.abs(controller.axes[3])/controller.axes[3]), window.innerHeight/2));
+                axes.aimx = Math.max(-window.innerWidth/2, Math.min(axes.aimx + ((Math.round((controller.axes[2]+(controllerSettings.driftX/100))*10)/10*controllerSettings.sensitivity*0.1)**2)/2*parseInt(Math.abs(controller.axes[2])/controller.axes[2]), window.innerWidth/1));
+                axes.aimy = Math.max(-window.innerHeight/2, Math.min(axes.aimy + ((Math.round((controller.axes[3]+(controllerSettings.driftY/100))*10)/10*controllerSettings.sensitivity*0.1)**2)/2*parseInt(Math.abs(controller.axes[3])/controller.axes[3]), window.innerHeight/1));
             } else {
                 axes.aimx = Math.max(-window.innerWidth/2, Math.min(axes.aimx + Math.round((controller.axes[2]+(controllerSettings.driftX/100))*10)/10*controllerSettings.sensitivity*0.2, window.innerWidth/2));
                 axes.aimy = Math.max(-window.innerHeight/2, Math.min(axes.aimy + Math.round((controller.axes[3]+(controllerSettings.driftY/100))*10)/10*controllerSettings.sensitivity*0.2, window.innerHeight/2));
